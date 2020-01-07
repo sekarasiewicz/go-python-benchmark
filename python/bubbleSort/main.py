@@ -1,7 +1,6 @@
-def main(arr):
-    if len(arr) == 2:
-        return
+import random
 
+def main(arr):
     for passnum in range(len(arr)-1,0,-1):
         for i in range(passnum):
             if arr[i]>arr[i+1]:
@@ -9,7 +8,21 @@ def main(arr):
                 arr[i] = arr[i+1]
                 arr[i+1] = temp
 
+def generateSlice(n): 
+	s = []
+	for _ in range(n): 
+		s.append(random.randint(0, 1e9))
+	
+	return s
+
+def benchmark(fun):
+    import time
+    start = time.time_ns()
+    arr = generateSlice(1000)
+    fun(arr)
+    end = time.time_ns()
+    print(end - start)
+
 if __name__ == "__main__":
-    arr = [64, 34, 25, 12, 22, 11, 90]
-    main(arr)
-    print(arr)
+    benchmark(main)
+    
