@@ -1,0 +1,1 @@
+[Is there any simple way to benchmark python script?](https://stackoverflow.com/questions/1593019/is-there-any-simple-way-to-benchmark-python-script)
