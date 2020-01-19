@@ -16,19 +16,19 @@ func generateSlice(n int) []int {
 
 func BenchmarkBubbleSort1000(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		b.StopTimer()
 		s := generateSlice(1000)
-		b.StartTimer()
+		b.StopTimer()
 		bubbleSort(s)
+		b.StartTimer()
 	}
 }
 
 func BenchmarkBubbleSort10000(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		b.StopTimer()
 		s := generateSlice(10000)
+		b.StopTimer()
+		bubbleSort(s)	
 		b.StartTimer()
-		bubbleSort(s)
 	}
 }
 

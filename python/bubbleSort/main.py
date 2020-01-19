@@ -8,7 +8,7 @@ def main(arr):
                 arr[i] = arr[i+1]
                 arr[i+1] = temp
 
-def generateSlice(n): 
+def generate_slice(n): 
 	s = []
 	for _ in range(n): 
 		s.append(random.randint(0, 1e9))
