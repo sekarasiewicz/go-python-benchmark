@@ -15,11 +15,11 @@ def generateSlice(n):
 	
 	return s
 
-def benchmark(fun):
+def benchmark(func):
     import time
-    start = time.time_ns()
     arr = generateSlice(1000)
-    fun(arr)
+    start = time.time_ns()
+    func(arr)
     end = time.time_ns()
     print(end - start)
 
