@@ -5,7 +5,7 @@ import (
 )
 
 func BenchmarkReadFromFile(b *testing.B) {
-	b.StopTimer()
-	readfromfile()
-	b.StartTimer()
+	for n := 0; n < b.N; n++ {
+		readfromfile()
+	}
 }

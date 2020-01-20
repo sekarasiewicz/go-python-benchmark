@@ -5,5 +5,5 @@ import (
 )
 
 func readfromfile() {
-	ioutil.ReadFile("/tmp/dat")
+	ioutil.ReadFile("./test.txt")
 }
