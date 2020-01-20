@@ -1,4 +1,5 @@
 import random
+import time
 
 def main(arr):
     for passnum in range(len(arr)-1,0,-1):
@@ -9,20 +10,25 @@ def main(arr):
                 arr[i+1] = temp
 
 def generate_slice(n): 
-	s = []
-	for _ in range(n): 
-		s.append(random.randint(0, 1e9))
-	
-	return s
+    s = []
+    for _ in range(n): 
+        s.append(random.randint(0, 1e9))
+    
+    return s
 
 def benchmark(func):
-    import time
-    arr = generateSlice(1000)
+    arr = generate_slice(10000)
+
     start = time.time_ns()
     func(arr)
     end = time.time_ns()
-    print(end - start)
+    result = (end - start)
+    print(result)
+    return result
 
 if __name__ == "__main__":
-    benchmark(main)
+    times = []
+    for _ in range(10):
+        times.append(benchmark(main))
+    print(sum(times) / len(times))
     

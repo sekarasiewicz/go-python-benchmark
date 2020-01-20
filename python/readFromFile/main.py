@@ -7,7 +7,11 @@ def benchmark(func):
     start = time.time_ns()
     func()
     end = time.time_ns()
-    print(end - start)
+    result = (end - start)
+    return result
 
 if __name__ == "__main__":
-    benchmark(read_from_file)
+    times = []
+    for _ in range(10):
+        times.append(benchmark(read_from_file))
+    print(sum(times) / len(times))

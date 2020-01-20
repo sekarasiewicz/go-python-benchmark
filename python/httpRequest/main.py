@@ -18,8 +18,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_response(status_code)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-        print("Hello world!")
-        return bytes("", 'UTF-8')
+        return bytes("Hello world!", 'UTF-8')
 
     def respond(self, opts):
         response = self.handle_http(opts['status'], self.path)
